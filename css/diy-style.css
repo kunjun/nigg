@@ -1,0 +1,24 @@
+#main-nav .container .navbar-brand {
+  /* margin-top: 15px;
+  margin-bottom: 10px; */
+  /* font-size: 20px;
+  line-height: 20px; */
+}
+#main-nav .container .navbar-nav {
+  margin: 0 -20px;
+  margin-right: 50px;
+}
+#main-nav .container .in>.nav>li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#main-nav .container .in>.nav>li>a {
+  /* font-size: 13px;
+  line-height: 13px; */
+}
+
+#main-nav .container .navbar-toggle {
+}
+#main-nav .container .navbar-toggle .icon-bar {
+  height: 2px;
+}
