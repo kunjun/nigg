@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>从零开始搭建Github Pages，自定义域名，开启https，用Hexo构建静态博客。 | 金·云古</title>
+  <meta name="author" content="Ging Wing">
+  
+  <meta name="description" content="用Github Pages+Hexo搭建一个无限流量的静态博客，并绑定自己注册的域名，开启https。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+  <meta property="og:title" content="从零开始搭建Github Pages，自定义域名，开启https，用Hexo构建静态博客。">
+  <meta property="og:site_name" content="金·云古">
+
+  
+    <meta property="og:image" content>
+  
+
+  
+    <link rel="alternative" href="/nigg/atom.xml" title="金·云古" type="application/atom+xml">
+  
+  
+    <link href="/nigg/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/nigg/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/nigg/css/diy-style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/nigg/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/nigg/">金·云古</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/nigg/archives" title="All the articles.">
+			  <i class></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/nigg/categories" title="All the categories.">
+			  <i class></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/nigg/tags" title="All the tags.">
+			  <i class></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/nigg/about" title="About me.">
+			  <i class></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/nigg/atom.xml" title="Subscribe me.">
+			  <i class></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 从零开始搭建Github Pages，自定义域名，开启https，用Hexo构建静态博客。</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 用Github Pages+Hexo搭建一个无限流量的静态博客，并绑定自己注册的域名，开启https。
+		 </div> <!-- alert -->
+	  		
+
+	  <h2 id="1-注册Github账号"><a href="#1-注册Github账号" class="headerlink" title="1. 注册Github账号"></a>1. 注册Github账号</h2><p>如果你已经有GitHub账号，跳过此步骤。<a href="https://github.com" title="Github" target="_blank" rel="noopener">前往注册</a></p>
+<h2 id="2-创建github-pages项目仓库"><a href="#2-创建github-pages项目仓库" class="headerlink" title="2. 创建github pages项目仓库"></a>2. 创建github pages项目仓库</h2><p>github pages：是GitHub为了给用户建立个人主页的项目，开发者完全可以当成一个静态博客来用，完全免费。</p>
+<p>创建github pages项目，具体过程看下图：</p>
+<p><img src="./images/20190516222304.png" alt="创建github pages项目" title="创建github pages项目"></p>
+<p>注意：一定要 你的用户名.github.io，这是规定。</p>
+<h2 id="3-开启github-pages"><a href="#3-开启github-pages" class="headerlink" title="3. 开启github pages"></a>3. 开启github pages</h2><p><img src="./images/20190516222857.png" alt="开启github pages" title="开启github pages"></p>
+<p>注意：github pages的规则是，username.github.io 是默认开启，如果你的项目名叫“myblog”，那么需要手动开启，你的这个github pages的地址就会是，子目录的形式，如：<a href="https://username.github.io/myblog" target="_blank" rel="noopener">https://username.github.io/myblog</a></p>
+<a id="more"></a>
+<p><img src="./images/20190516223437.png" alt="开启github pages" title="开启github pages"></p>
+<blockquote>
+<p>绑定域名, 在 “Custom domain” 下方输入框输入你的域名即可,<br>比如”<a href="http://www.uoogre.com&quot;" target="_blank" rel="noopener">www.uoogre.com&quot;</a>,<br>注意: 绑定域名最好只在项目名为 “username.github.io”下绑定, 其他项目比如”myblog”放空, 这样就能实现绑定域名子目录的效果, <a href="http://www.xxxxx.com/myblog" target="_blank" rel="noopener">www.xxxxx.com/myblog</a></p>
+</blockquote>
+<h2 id="4-上传文件到GitHub-pages"><a href="#4-上传文件到GitHub-pages" class="headerlink" title="4. 上传文件到GitHub pages"></a>4. 上传文件到GitHub pages</h2><p>安卓git客户端，设置证书，如果你有多个不同服务器的git远程仓库，可以设置多个证书，具体看我的这篇博文，<a href="https://www.uoogre.com/nigg/git-ruhepeizhiduogesshkey/" target="_blank" rel="noopener">Git如何配置多个ssh key</a></p>
+<h2 id="5-安装Hexo，构建静态博客"><a href="#5-安装Hexo，构建静态博客" class="headerlink" title="5. 安装Hexo，构建静态博客"></a>5. 安装Hexo，构建静态博客</h2><ol>
+<li>先安装node.js<br><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">下载Node.js</a></li>
+<li>安装Hexo<blockquote>
+<p>在你要安装的hexo位置，右键打开Git Bash</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br><span class="line">hexo init #初始化</span><br><span class="line">npm i</span><br><span class="line">hexo g #生成 hexo generate 该命令的简写</span><br><span class="line">hexo s #启动本地web服务器 hexo server 该命令的简写, 启用服务器之后，你就可以通过 http://localhost:4000 查看了</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>更多命令，请参考<a href="https://hexo.io/docs/commands.html" target="_blank" rel="noopener">Hexo文档</a><br>这里介绍几个实用命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new "文章名" #新建文章</span><br><span class="line">hexo new page "页面名" #新建页面</span><br><span class="line">hexo g # 生成</span><br><span class="line">hexo s # 开启服务器，按Ctrl + C 可以结束</span><br><span class="line">hexo s --debug # 通过此命令可以调试开发模板</span><br><span class="line">hexo d -g # 生成并上传部署到远程仓库</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>一些hexo的命令简写<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<ol start="3">
+<li>添加hexo主题<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">cd your-hexo-site</span><br><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>启用主题。修改站点配置文件，根目录下_config.yml，<br>theme: next</p>
+</blockquote>
+<ol start="4">
+<li>使用Hexo deploy上传部署到github<br>修改根目录下_config.yml文件<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">    type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">    repo:</span> <span class="string">git@github.com:cczeng/cczeng.github.io.git</span>  <span class="comment">#这里的网址填你自己的</span></span><br><span class="line"><span class="attr">    branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo d #上传部署到github</span><br></pre></td></tr></table></figure>
+<h2 id="5-现在你可以在线访问你的博客了"><a href="#5-现在你可以在线访问你的博客了" class="headerlink" title="5. 现在你可以在线访问你的博客了"></a>5. 现在你可以在线访问你的博客了</h2><p>访问这个地址 <a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a> 看看你效果.</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/nigg/2019/05/16/git-peizhi-duoge-ssh-key/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/nigg/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/nigg/2019/05/16/test-code-highlight/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+    <div id="disqus_thread" class="ds-thread">
+        <script type="text/javascript">
+            /**
+             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+                /*
+                 var disqus_config = function () {
+                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                 };
+                 */
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//winging.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+    </div>
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-05-16 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/nigg/categories/Tech/">Tech<span>3</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/nigg/tags/Github-Pages/">Github Pages<span>1</span></a></li> <li><a href="/nigg/tags/Hexo/">Hexo<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#1-注册Github账号"><span class="toc-article-text">1. 注册Github账号</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#2-创建github-pages项目仓库"><span class="toc-article-text">2. 创建github pages项目仓库</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#3-开启github-pages"><span class="toc-article-text">3. 开启github pages</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#4-上传文件到GitHub-pages"><span class="toc-article-text">4. 上传文件到GitHub pages</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#5-安装Hexo，构建静态博客"><span class="toc-article-text">5. 安装Hexo，构建静态博客</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#5-现在你可以在线访问你的博客了"><span class="toc-article-text">5. 现在你可以在线访问你的博客了</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+<script type="text/javascript">
+var disqus_shortname = 'winging';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2019 Ging Wing
+  
+      <!-- with help from <a href="https://hexo.io/" target="_blank">Hexo</a>, <a href="https://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. 
+     <br> Theme by <a href="https://github.com/blackshow/hexo-theme-freemind.386"  target="_blank">Freemind.386</a>. -->
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/nigg/js/jquery.imagesloaded.min.js"></script>
+<script src="/nigg/js/gallery.js"></script>
+<script src="/nigg/js/bootstrap.min.js"></script>
+<script src="/nigg/js/main.js"></script>
+<script src="/nigg/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/nigg/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/nigg/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/nigg/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
