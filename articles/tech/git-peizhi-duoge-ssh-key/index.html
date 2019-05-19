@@ -123,19 +123,19 @@
 		 </div> <!-- alert -->
 	  		
 
-	  <h2 id="生成公司用的-ssh-key"><a href="#生成公司用的-ssh-key" class="headerlink" title="生成公司用的 ssh key"></a>生成公司用的 ssh key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "myname@company.com” -f ~/.ssh/company_rsa</span><br></pre></td></tr></table></figure>
-<h2 id="生成github用的-ssh-key"><a href="#生成github用的-ssh-key" class="headerlink" title="生成github用的 ssh key"></a>生成github用的 ssh key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "myname@github.com” -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
+	  <h2 id="生成公司用的-ssh-key"><a href="#生成公司用的-ssh-key" class="headerlink" title="生成公司用的 ssh key"></a>生成公司用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@company.com"</span> -f ~/.ssh/company_rsa</span><br></pre></td></tr></table></figure>
+<h2 id="生成github用的-ssh-key"><a href="#生成github用的-ssh-key" class="headerlink" title="生成github用的 ssh key"></a>生成github用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@github.com"</span> -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
 <p>现在. 你的ssh目录下应该有4个文件：company_rsa和company_rsa.pub，github_rsa和github_rsa.pub，将他们的公钥文件（company_rsa.pub，github_rsa.pub）内容复制到对应的远程GitHub仓库系统证书配置上</p>
 <h2 id="下面简单介绍github代码托管平台的公钥配置"><a href="#下面简单介绍github代码托管平台的公钥配置" class="headerlink" title="下面简单介绍github代码托管平台的公钥配置"></a>下面简单介绍github代码托管平台的公钥配置</h2><a id="more"></a>
-<p><img src="./images/20190516231955.png" alt="github ssh key 公钥配置" title="github ssh key 公钥配置"></p>
-<p><img src="./images/20190516232124.png" alt="github ssh key 公钥配置" title="github ssh key 公钥配置"></p>
-<h2 id="本地git客户端添加私钥"><a href="#本地git客户端添加私钥" class="headerlink" title="本地git客户端添加私钥"></a>本地git客户端添加私钥</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/company_rsa $ ssh-add ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
+<p><img src="/nigg/images/20190516231955.png" alt="github ssh key 公钥配置" title="github ssh key 公钥配置"></p>
+<p><img src="/nigg/images/20190516232124.png" alt="github ssh key 公钥配置" title="github ssh key 公钥配置"></p>
+<h2 id="本地git客户端添加私钥"><a href="#本地git客户端添加私钥" class="headerlink" title="本地git客户端添加私钥"></a>本地git客户端添加私钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/company_rsa $ ssh-add ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>如果 ssh-add 提示”Could not open a connection to your authentication agent”，<br>可以先执行命令 “ssh-agent bash”<br>或者 “eval <code>ssh-agent -s</code>“<br>会出现类似 Agent pid 6088 字符, 则启动成功<br>然后再次执行”ssh-add ~/.ssh/company_rsa $ ssh-add ~/.ssh/github_rsa”</p>
+<p>如果 ssh-add 提示”Could not open a connection to your authentication agent”，<br>可以先执行命令 “ssh-agent bash”<br>或者 “eval `ssh-agent -s`“<br>会出现类似 Agent pid 6088 字符, 则启动成功<br>然后再次执行”ssh-add ~/.ssh/company_rsa $ ssh-add ~/.ssh/github_rsa”</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 添加完成后, 我们就可以通过 ssh-add -l 查看私钥列表</span><br><span class="line"><span class="meta">#</span> 通过 ssh-add -D 来清空私钥列表</span><br></pre></td></tr></table></figure>
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>如果.ssh目录(私钥所在的文件夹)下没有config文件，则创建<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch config</span><br></pre></td></tr></table></figure></p>
-<p>在config文件添加内容如下:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> github</span><br><span class="line">Host github.com</span><br><span class="line">Port 22</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile C:/Users/yourname/.ssh/github-rsa</span><br><span class="line">User yourname</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> company</span><br><span class="line">Host company</span><br><span class="line">HostName company</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile C:/Users/yourname/.ssh/company_rsa</span><br><span class="line">User yourname</span><br><span class="line"><span class="meta">#</span> 配置文件参数</span><br><span class="line"><span class="meta">#</span> Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件（可以直接填写ip地址）</span><br><span class="line"><span class="meta">#</span> HostName : 要登录主机的主机名（建议与Host一致）</span><br><span class="line"><span class="meta">#</span> User : 登录名（比如github的username）</span><br><span class="line"><span class="meta">#</span> IdentityFile : 指明上面User对应的identityFile路径</span><br><span class="line"><span class="meta">#</span> Port: 端口号（默认22号端口，如果不是则需要指定）</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加完成后, 我们就可以通过 ssh-add -l 查看私钥列表</span></span><br><span class="line"><span class="comment"># 通过 ssh-add -D 来清空私钥列表</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>如果.ssh目录(私钥所在的文件夹)下没有config文件，则创建<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch config</span><br></pre></td></tr></table></figure></p>
+<p>在config文件添加内容如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github.com</span><br><span class="line">Port 22</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile C:/Users/yourname/.ssh/github-rsa</span><br><span class="line">User yourname</span><br><span class="line"></span><br><span class="line"><span class="comment"># company</span></span><br><span class="line">Host company</span><br><span class="line">HostName company</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile C:/Users/yourname/.ssh/company_rsa</span><br><span class="line">User yourname</span><br><span class="line"><span class="comment"># 配置文件参数</span></span><br><span class="line"><span class="comment"># Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件（可以直接填写ip地址）</span></span><br><span class="line"><span class="comment"># HostName : 要登录主机的主机名（建议与Host一致）</span></span><br><span class="line"><span class="comment"># User : 登录名（比如github的username）</span></span><br><span class="line"><span class="comment"># IdentityFile : 指明上面User对应的identityFile路径</span></span><br><span class="line"><span class="comment"># Port: 端口号（默认22号端口，如果不是则需要指定）</span></span><br></pre></td></tr></table></figure></p>
 	  
 	</div>
 
@@ -150,7 +150,7 @@
 
     <a href="/nigg/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/nigg/2019/05/16/github-pages-hexo-https-custom-domain/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    <a href="/nigg/articles/tech/github-pages-hexo-https-custom-domain/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
     
 
     
@@ -162,36 +162,31 @@
 	<!-- comment -->
 	
 <section id="comment">
-    <h2 class="title">Comments</h2>
+  <h2 class="title">Comments</h2>
 
-    
-    <div id="disqus_thread" class="ds-thread">
-        <script type="text/javascript">
-            /**
-             * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-             */
-                /*
-                 var disqus_config = function () {
-                 this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-                 this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                 };
-                 */
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
+  
+  <!-- 来必力City版安装代码 -->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC80NDI4Ny8yMDgxOQ==" style="background-color: #fff;">
+    <script type="text/javascript">
+      (function (d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
 
-                s.src = '//winging.disqus.com/embed.js';
+        if (typeof LivereTower === 'function') {
+          return;
+        }
 
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
-                Disqus.</a></noscript>
-    </div>
-    
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+  <!-- City版安装代码已完成 -->
+  
 </section>
-
 
 	</div> <!-- col-md-9/col-md-12 -->
 		
@@ -214,7 +209,7 @@
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    </li><li><a href="/nigg/categories/Tech/">Tech<span>3</span></a></li>
+    </li><li><a href="/nigg/categories/tech/">tech<span>3</span></a></li>
   
 
     </ul>
@@ -227,7 +222,7 @@
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/nigg/tags/Git/">Git<span>1</span></a></li>
+  <li><a href="/nigg/tags/git/">git<span>1</span></a></li>
     </ul>
 	</div>
 		
@@ -251,18 +246,6 @@
 		
 
 </div><!-- row -->
-
-<script type="text/javascript">
-var disqus_shortname = 'winging';
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-</script>
-
 
 
 	</div>
