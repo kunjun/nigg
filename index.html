@@ -41,6 +41,16 @@
   
 
 
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c3a1dc3b5aa298923edf177ecb94caf5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 </head>
 </html>
@@ -126,41 +136,11 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/" title="通过在git bash下的相关命令, 实现一台电脑配置多个git证书ssh key">Git如何配置多个ssh key</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-05-16  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h2 id="生成公司用的-ssh-key"><a href="#生成公司用的-ssh-key" class="headerlink" title="生成公司用的 ssh key"></a>生成公司用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@company.com"</span> -f ~/.ssh/company_rsa</span><br></pre></td></tr></table></figure>
-<h2 id="生成github用的-ssh-key"><a href="#生成github用的-ssh-key" class="headerlink" title="生成github用的 ssh key"></a>生成github用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@github.com"</span> -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
-<p>现在. 你的ssh目录下应该有4个文件：company_rsa和company_rsa.pub，github_rsa和github_rsa.pub，将他们的公钥文件（company_rsa.pub，github_rsa.pub）内容复制到对应的远程GitHub仓库系统证书配置上</p>
-<h2 id="下面简单介绍github代码托管平台的公钥配置"><a href="#下面简单介绍github代码托管平台的公钥配置" class="headerlink" title="下面简单介绍github代码托管平台的公钥配置"></a>下面简单介绍github代码托管平台的公钥配置</h2>
-	
-	</div>
-  <a type="button" href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/nigg/articles/tech/github-pages-hexo-https-custom-domain/" title="用Github Pages+Hexo搭建一个无限流量的静态博客，并绑定自己注册的域名，开启https。">搭建Github Pages，自定义域名，开启https，用Hexo构建静态博客，全过程总结。</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
-		<div class="date">post @ 2019-05-16  </div>
+		<div class="date">post @ 2019-05-26  </div>
 		</div>
 	</div>
 	
@@ -180,6 +160,36 @@
 	
 	</div>
   <a type="button" href="/nigg/articles/tech/github-pages-hexo-https-custom-domain/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/" title="通过在git bash下的相关命令, 实现一台电脑配置多个git证书ssh key">Git如何配置多个ssh key</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2019-05-24  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<h2 id="生成公司用的-ssh-key"><a href="#生成公司用的-ssh-key" class="headerlink" title="生成公司用的 ssh key"></a>生成公司用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@company.com"</span> -f ~/.ssh/company_rsa</span><br></pre></td></tr></table></figure>
+<h2 id="生成github用的-ssh-key"><a href="#生成github用的-ssh-key" class="headerlink" title="生成github用的 ssh key"></a>生成github用的 ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"myname@github.com"</span> -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure>
+<p>现在. 你的ssh目录下应该有4个文件：company_rsa和company_rsa.pub，github_rsa和github_rsa.pub，将他们的公钥文件（company_rsa.pub，github_rsa.pub）内容复制到对应的远程GitHub仓库系统证书配置上</p>
+<h2 id="下面简单介绍github代码托管平台的公钥配置"><a href="#下面简单介绍github代码托管平台的公钥配置" class="headerlink" title="下面简单介绍github代码托管平台的公钥配置"></a>下面简单介绍github代码托管平台的公钥配置</h2>
+	
+	</div>
+  <a type="button" href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -260,13 +270,13 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/nigg/tags/hexo/">hexo<span>1</span></a></li>
+			<li><a href="/nigg/tags/highlight/">highlight<span>1</span></a></li>
 		
-			<li><a href="/nigg/tags/code/">code<span>1</span></a></li>
+			<li><a href="/nigg/tags/hexo/">hexo<span>1</span></a></li>
 		
 			<li><a href="/nigg/tags/git/">git<span>1</span></a></li>
 		
-			<li><a href="/nigg/tags/highlight/">highlight<span>1</span></a></li>
+			<li><a href="/nigg/tags/code/">code<span>1</span></a></li>
 		
 			<li><a href="/nigg/tags/github-pages/">github pages<span>1</span></a></li>
 		
@@ -282,11 +292,11 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/" title="通过在git bash下的相关命令, 实现一台电脑配置多个git证书ssh key"><i class="fa fa-file-o"></i>Git如何配置多个ssh key</a>
+        <a href="/nigg/articles/tech/github-pages-hexo-https-custom-domain/" title="用Github Pages+Hexo搭建一个无限流量的静态博客，并绑定自己注册的域名，开启https。"><i class="fa fa-file-o"></i>搭建Github Pages，自定义域名，开启http...</a>
       </li>
     
       <li>
-        <a href="/nigg/articles/tech/github-pages-hexo-https-custom-domain/" title="用Github Pages+Hexo搭建一个无限流量的静态博客，并绑定自己注册的域名，开启https。"><i class="fa fa-file-o"></i>搭建Github Pages，自定义域名，开启http...</a>
+        <a href="/nigg/articles/tech/git-peizhi-duoge-ssh-key/" title="通过在git bash下的相关命令, 实现一台电脑配置多个git证书ssh key"><i class="fa fa-file-o"></i>Git如何配置多个ssh key</a>
       </li>
     
       <li>
